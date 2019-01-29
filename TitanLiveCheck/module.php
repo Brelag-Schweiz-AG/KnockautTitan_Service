@@ -60,7 +60,7 @@
         */
         public function LiveCheck() {
           // Sendet alle 24h einen E-Mail
-          $Betreff = "ALIVE" . $this->ReadPropertyString("License");
+          $Betreff = "ALIVE: " . $this->ReadPropertyString("License");
 
           SMTP_SendMail($this->ReadPropertyInteger("Alive"), $Betreff, " ");
 
