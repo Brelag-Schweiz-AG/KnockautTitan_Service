@@ -1,6 +1,6 @@
 <?
     // Klassendefinition
-    class Titan-LiveCheck extends IPSModule {
+    class TitanLiveCheck extends IPSModule {
 
         // Der Konstruktor des Moduls
         // Überschreibt den Standard Kontruktor von IPS
