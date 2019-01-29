@@ -61,7 +61,7 @@
         public function LiveCheck() {
           // Sendet alle 24h einen E-Mail
 
-          SMTP_SendMail($this->GetIDForIdent("Alive"), "ALIVE: ", " ");
+          SMTP_SendMail($this->ReadPropertyInteger("Alive"), "ALIVE: ", " ");
 
         }
 
