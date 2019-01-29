@@ -58,15 +58,15 @@
         * ABC_MeineErsteEigeneFunktion($id);
         *
         */
-        public function LiveCheck {
+        public function LiveCheck() {
           // Sendet alle 24h einen E-Mail
 
           SMTP_SendMail($this->GetIDForIdent("Alive"), "ALIVE: $this->GetIDForIdent("License")", "");
 
         }
 
-        public function UpdateCheck {
-          
+        public function UpdateCheck() {
+
         }
 
 
