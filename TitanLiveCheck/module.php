@@ -1,6 +1,6 @@
 <?
     // Klassendefinition
-    class Alarmanlage extends IPSModule {
+    class Titan-LiveCheck extends IPSModule {
 
         // Der Konstruktor des Moduls
         // Überschreibt den Standard Kontruktor von IPS
