@@ -1,0 +1,9 @@
+{
+    "elements":
+    [
+        { "type": "Label", "label": "Mail Einstellungen:"},
+        { "type": "SelectInstance", "name": "Alive", "caption": "SMTP Instanz Lebenszeichen" },
+        { "type": "SelectInstance", "name": "LastUpdate", "caption": "SMTP Instanz Var. Aktualisierung" },
+        { "type": "ValidationTextBox", "name": "License", "caption": "Lizenzname" }
+    ]
+}
