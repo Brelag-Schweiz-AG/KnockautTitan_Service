@@ -60,8 +60,8 @@
         */
         public function LiveCheck() {
           // Sendet alle 24h einen E-Mail
-
-          SMTP_SendMail($this->GetIDForIdent("Alive"), "ALIVE: $this->GetIDForIdent("Alive")", "");
+          $Project = GetValue($this->GetIDForIdent("License"))
+          SMTP_SendMail($this->GetIDForIdent("Alive"), 'ALIVE: $Project', "");
 
         }
 
