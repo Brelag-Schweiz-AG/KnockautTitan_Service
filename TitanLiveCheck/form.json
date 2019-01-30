@@ -4,6 +4,9 @@
         { "type": "Label", "label": "Mail Einstellungen:"},
         { "type": "SelectInstance", "name": "Alive", "caption": "SMTP Instanz Lebenszeichen" },
         { "type": "SelectInstance", "name": "LastUpdate", "caption": "SMTP Instanz Var. Aktualisierung" },
-        { "type": "ValidationTextBox", "name": "License", "caption": "Lizenzname" }
+        { "type": "ValidationTextBox", "name": "License", "caption": "Lizenzname" },
+        { "type": "Label", "label": "Intervall für E-Mail versand (Live Check)"},
+        { "type": "Label", "label": "NICHT VERÄNDERN"},
+        { "type": "NumberSpinner", "name": "IntLiveCheck", "caption": "Minuten"}
     ]
 }

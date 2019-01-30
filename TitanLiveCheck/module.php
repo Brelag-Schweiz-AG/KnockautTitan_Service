@@ -20,6 +20,7 @@
             $this->RegisterPropertyInteger("Alive", 0);
             $this->RegisterPropertyInteger("LastUpdate", 0);
             $this->RegisterPropertyString("License", "");
+            $this->RegisterPropertyInteger("IntLiveCheck", 12);
 
             // Zyklisches auslösen
             $this->RegisterTimer("AliveCheck", 0, 'TLC_LiveCheck($_IPS[\'TARGET\']);');
@@ -75,8 +76,8 @@
             // Diese Zeile nicht löschen
             parent::ApplyChanges();
 
-            $Intervall = 2*1000;
-            $this->SetTimerInterval("AliveCheck", $Intervall);
+            $Intervall = $this->ReadPropertyInteger("IntLiveCheck");
+            $this->SetTimerInterval("AliveCheck", $Intervall*60*1000);
 
           }
 
