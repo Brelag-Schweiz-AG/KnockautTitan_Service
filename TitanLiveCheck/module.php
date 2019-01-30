@@ -22,7 +22,7 @@
             $this->RegisterPropertyString("License", "");
 
             // Zyklisches auslösen
-            $this->RegisterTimer("AliveCheck", 0, "TLC_LiveCheck($_IPS[\'TARGET\']);");
+            $this->RegisterTimer("AliveCheck", 0, 'TLC_LiveCheck($_IPS[\'TARGET\']);');
         }
 
 
