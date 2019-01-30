@@ -76,7 +76,7 @@
             parent::ApplyChanges();
 
             $Intervall = 2*1000;
-            $this->$this->SetTimerInterval("AliveCheck", $Intervall);
+            $this->SetTimerInterval("AliveCheck", $Intervall);
 
           }
 
