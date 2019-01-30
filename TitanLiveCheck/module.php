@@ -21,9 +21,7 @@
             $this->RegisterPropertyInteger("LastUpdate", 0);
             $this->RegisterPropertyString("License", "");
 
-            // Ereignis für Auslösung
-            $eid = IPS_CreateEvent(1);     //Zyklisches Ereignis
-            IPS_SetEventCyclic($eid, 2, 1, 0, 0, 3, 6);
+
 
         }
 
@@ -59,6 +57,9 @@
         *
         */
         public function LiveCheck() {
+
+          $eid = IPS_CreateEvent(1);                     //Zyklisches Ereignis
+          IPS_SetEventCyclic($eid, 2, 1, 0, 0, 3, 6);    //Jeden Tag alle 6 Stunden
           // Sendet alle 24h einen E-Mail
           $Betreff = "ALIVE: " . $this->ReadPropertyString("License");
 
