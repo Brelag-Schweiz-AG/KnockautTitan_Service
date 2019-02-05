@@ -83,7 +83,7 @@
                 $VarIDString = implode($VarID);
                 $VarInfo = IPS_GetVariable($VarIDString);
                 $TimeDiff = strtotime("now") - $VarInfo["VariableUpdated"];
-                $DiffToLastUpdate = $this->ReadPropertyInteger("LastUpdateDiff")*60;
+                $DiffToLastUpdate = $this->ReadPropertyInteger("LastUpdateDiff")/60;
 
 
                 if($TimeDiff > $DiffToLastUpdate)
