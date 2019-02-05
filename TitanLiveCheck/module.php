@@ -82,7 +82,7 @@
                 $VarIDString = implode($VarID);
                 $VarInfo = IPS_GetVariable($VarIDString);
 
-                SetValue($this->GetIDForIdent("TESTString"), $VarInfo);
+                SetValue($this->GetIDForIdent("TESTString"), $VarInfo[VariableUpdated]);
             }
         }
 
