@@ -81,8 +81,9 @@
             foreach ($IDarray as $VarID) {
                 $VarIDString = implode($VarID);
                 $VarInfo = IPS_GetVariable($VarIDString);
+                $LastUpdate = $VarInfo[VariableUpdated];
 
-                SetValue($this->GetIDForIdent("TESTString"), $VarInfo[VariableUpdated]);
+                SetValue($this->GetIDForIdent("TESTString"), $LastUpdate);
             }
         }
 
