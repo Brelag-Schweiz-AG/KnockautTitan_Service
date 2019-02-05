@@ -80,7 +80,7 @@
 
             foreach ($IDarray as $VarID) {
                 $VarIDString = implode($VarID);
-                SetValue($this->GetIDForIdent("TESTString"), $VarID);
+                SetValue($this->GetIDForIdent("TESTString"), $VarIDString);
             }
         }
 
