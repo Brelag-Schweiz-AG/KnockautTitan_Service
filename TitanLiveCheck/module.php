@@ -21,9 +21,17 @@
             $this->RegisterPropertyInteger("LastUpdate", 0);
             $this->RegisterPropertyString("License", "");
             $this->RegisterPropertyInteger("IntLiveCheck", 12);
+            $this->RegisterPropertyInteger("IntUpdateCheck", 12);
+            $this->RegisterPropertyString("Supplement", "[]");
 
             // Zyklisches auslösen
+            // Live Check Standard 1x am Tag
             $this->RegisterTimer("AliveCheck", 0, 'TLC_LiveCheck($_IPS[\'TARGET\']);');
+            // Update Check Standard 1x am Tag
+            $this->RegisterTimer("UpdateCheck", 0, 'TLC_LiveCheck($_IPS[\'TARGET\']);');
+
+            // Test Variablen
+            $this->RegisterVariableString("TESTString", "");
         }
 
 
@@ -68,7 +76,11 @@
         }
 
         public function UpdateCheck() {
+            $IDarray = json_decode($this->ReadPropertyString("Supplement"), true);
 
+            foreach ($IDarray as $VarID) {
+                SetValue($this->GetIDForIdent("TESTString"), $VarID); 
+            }
         }
 
         public function ApplyChanges() {
