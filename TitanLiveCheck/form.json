@@ -21,12 +21,15 @@
 					                                                                                                                       }],
                                                                                                                                  "values": [
                                                                                                                                  ]},
+        { "type": "Label", "label": " "},
         { "type": "Label", "label": "Intervall für E-Mail versand (Live Check)"},
         { "type": "Label", "label": "NICHT VERÄNDERN"},
         { "type": "NumberSpinner", "name": "IntLiveCheck", "caption": "Minuten"},
         { "type": "Label", "label": "Intervall für E-Mail versand (Variablen Aktualisierung)"},
+        { "type": "Label", "label": " "},
         { "type": "Label", "label": "NICHT VERÄNDERN"},
         { "type": "NumberSpinner", "name": "IntUpdateCheck", "caption": "Minuten"},
+        { "type": "Label", "label": " "},
         { "type": "Label", "label": "Diefferenz zur letzten Aktualisierung"},
         { "type": "NumberSpinner", "name": "LastUpdateDiff", "caption": "Minuten"}
     ]

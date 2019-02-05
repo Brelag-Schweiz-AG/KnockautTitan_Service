@@ -104,8 +104,13 @@
             // Diese Zeile nicht löschen
             parent::ApplyChanges();
 
-            $Intervall = $this->ReadPropertyInteger("IntLiveCheck");
+            // Intervall Alive
+            $IntervallAlive = $this->ReadPropertyInteger("IntLiveCheck");
             $this->SetTimerInterval("AliveCheck", $Intervall*60*1000);
+
+            // Intervall Update
+            $IntervallUpdate = $this->ReadPropertyInteger("IntUpdateCheck");
+            $this->SetTimerInterval("UpdateCheck", $IntervallUpdate*60*1000);
 
           }
 
