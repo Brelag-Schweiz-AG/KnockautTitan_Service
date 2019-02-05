@@ -31,7 +31,7 @@
             // Update Check Standard 1x am Tag
             $this->RegisterTimer("UpdateCheck", 0, 'TLC_LiveCheck($_IPS[\'TARGET\']);');
 
-            
+
         }
 
 
@@ -71,7 +71,7 @@
           // Sendet alle 24h einen E-Mail
           $BetreffAlive = "ALIVE: " . $this->ReadPropertyString("License");
 
-          SMTP_SendMail($this->ReadPropertyInteger("Alive"), $Betreff, " ");
+          SMTP_SendMail($this->ReadPropertyInteger("Alive"), $BetreffAlive, " ");
 
         }
 
