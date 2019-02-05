@@ -20,8 +20,9 @@
             $this->RegisterPropertyInteger("Alive", 0);
             $this->RegisterPropertyInteger("LastUpdate", 0);
             $this->RegisterPropertyString("License", "");
-            $this->RegisterPropertyInteger("IntLiveCheck", 12);
-            $this->RegisterPropertyInteger("IntUpdateCheck", 12);
+            $this->RegisterPropertyInteger("IntLiveCheck", 1440);
+            $this->RegisterPropertyInteger("IntUpdateCheck", 1440);
+            $this->RegisterPropertyInteger("LastUpdateDiff", 1380)M
             $this->RegisterPropertyString("Supplement", "[]");
 
             // Zyklisches auslösen
@@ -69,7 +70,7 @@
 
 
           // Sendet alle 24h einen E-Mail
-          $Betreff = "ALIVE: " . $this->ReadPropertyString("License");
+          $BetreffAlive = "ALIVE: " . $this->ReadPropertyString("License");
 
           SMTP_SendMail($this->ReadPropertyInteger("Alive"), $Betreff, " ");
 
@@ -81,9 +82,14 @@
             foreach ($IDarray as $VarID) {
                 $VarIDString = implode($VarID);
                 $VarInfo = IPS_GetVariable($VarIDString);
-                $LastUpdate = $VarInfo["VariableUpdated"];
                 $TimeDiff = strtotime("now") - $VarInfo["VariableUpdated"];
+                $DiffToLastUpdate = $this->ReadPropertyInteger("LastUpdateDiff")*60;
+                $BetreffALERT = "ALERT: " . $this->ReadPropertyString("License");
 
+                if($TimeDiff > $DiffToLastUpdate)
+                {
+                  SMTP_SendMail($this->ReadPropertyInteger("LastUpdate"), $BetreffALERT, "IPS_GetName(IPS_GetParent($VarIDString)): IPS_GetName($VarIDString), $VarIDString; Letzter Update: $VarInfo["VariableUpdated"]");
+                }
                 SetValue($this->GetIDForIdent("TESTString"), date("d.m.y - H:i:s", $LastUpdate));
             }
         }
