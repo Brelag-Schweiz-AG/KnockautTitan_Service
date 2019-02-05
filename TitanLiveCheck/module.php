@@ -92,8 +92,9 @@
                   $ParentID = IPS_GetParent($VarIDString);
                   $ParentName = IPS_GetName($ParentID);
                   $VariableName = IPS_GetName($VarIDString);
+                  $LastUpdate = $VarInfo["VariableUpdated"];
 
-                  SMTP_SendMail($this->ReadPropertyInteger("LastUpdate"), $BetreffALERT, "$ParentName: $VariableName, $VarIDString; Letzter Update: $VarInfo["VariableUpdated"]");
+                  SMTP_SendMail($this->ReadPropertyInteger("LastUpdate"), $BetreffALERT, "$ParentName: $VariableName, $VarIDString; Letzter Update: $LastUpdate");
                 }
                 SetValue($this->GetIDForIdent("TESTString"), date("d.m.y - H:i:s", $LastUpdate));
             }
