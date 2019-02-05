@@ -22,7 +22,7 @@
             $this->RegisterPropertyString("License", "");
             $this->RegisterPropertyInteger("IntLiveCheck", 1440);
             $this->RegisterPropertyInteger("IntUpdateCheck", 1440);
-            $this->RegisterPropertyInteger("LastUpdateDiff", 1380)M
+            $this->RegisterPropertyInteger("LastUpdateDiff", 1380);
             $this->RegisterPropertyString("Supplement", "[]");
 
             // Zyklisches auslösen
