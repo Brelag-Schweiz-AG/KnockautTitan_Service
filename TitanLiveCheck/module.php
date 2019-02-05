@@ -79,6 +79,7 @@
             $IDarray = json_decode($this->ReadPropertyString("Supplement"), true);
 
             foreach ($IDarray as $VarID) {
+                $VarIDString = implode($VarID);
                 SetValue($this->GetIDForIdent("TESTString"), $VarID);
             }
         }
