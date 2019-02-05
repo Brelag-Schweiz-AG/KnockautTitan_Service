@@ -83,7 +83,7 @@
                 $VarInfo = IPS_GetVariable($VarIDString);
                 $LastUpdate = $VarInfo[VariableUpdated];
 
-                SetValue($this->GetIDForIdent("TESTString"), $LastUpdate);
+                SetValue($this->GetIDForIdent("TESTString"), date($LastUpdate));
             }
         }
 
