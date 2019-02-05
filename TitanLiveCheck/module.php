@@ -81,7 +81,7 @@
             foreach ($IDarray as $VarID) {
                 $VarIDString = implode($VarID);
                 $VarInfo = IPS_GetVariable($VarIDString);
-                $LastUpdate = $VarInfo[VariableUpdated];
+                $LastUpdate = $VarInfo["VariableUpdated"];
                 $TimeDiff = strtotime("now") - $VarInfo["VariableUpdated"];
 
                 SetValue($this->GetIDForIdent("TESTString"), date("d.m.y - H:i:s", $LastUpdate));
