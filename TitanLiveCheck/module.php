@@ -29,7 +29,7 @@
             // Live Check Standard 1x am Tag
             $this->RegisterTimer("AliveCheck", 0, 'TLC_LiveCheck($_IPS[\'TARGET\']);');
             // Update Check Standard 1x am Tag
-            $this->RegisterTimer("UpdateCheck", 0, 'TLC_LiveCheck($_IPS[\'TARGET\']);');
+            $this->RegisterTimer("UpdateCheck", 0, 'TLC_UpdateCheck($_IPS[\'TARGET\']);');
 
 
         }
