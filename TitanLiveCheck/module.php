@@ -31,7 +31,7 @@
             $this->RegisterTimer("UpdateCheck", 0, 'TLC_LiveCheck($_IPS[\'TARGET\']);');
 
             // Test Variablen
-            $this->RegisterVariableString("TESTString", "");
+            $this->RegisterVariableString("TESTString", "Test String", "", 0);
         }
 
 
@@ -79,7 +79,7 @@
             $IDarray = json_decode($this->ReadPropertyString("Supplement"), true);
 
             foreach ($IDarray as $VarID) {
-                SetValue($this->GetIDForIdent("TESTString"), $VarID); 
+                SetValue($this->GetIDForIdent("TESTString"), $VarID);
             }
         }
 
