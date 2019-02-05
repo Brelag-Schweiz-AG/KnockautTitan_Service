@@ -80,7 +80,9 @@
 
             foreach ($IDarray as $VarID) {
                 $VarIDString = implode($VarID);
-                SetValue($this->GetIDForIdent("TESTString"), $VarIDString);
+                $VarInfo = IPS_GetVariable($VarIDString);
+
+                SetValue($this->GetIDForIdent("TESTString"), $VarInfo);
             }
         }
 
