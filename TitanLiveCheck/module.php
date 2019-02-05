@@ -31,8 +31,7 @@
             // Update Check Standard 1x am Tag
             $this->RegisterTimer("UpdateCheck", 0, 'TLC_LiveCheck($_IPS[\'TARGET\']);');
 
-            // Test Variablen
-            $this->RegisterVariableString("TESTString", "Test String", "", 0);
+            
         }
 
 
@@ -96,7 +95,7 @@
 
                   SMTP_SendMail($this->ReadPropertyInteger("LastUpdate"), $BetreffALERT, "$ParentName: $VariableName, $VarIDString; Letzter Update: $LastUpdate");
                 }
-                SetValue($this->GetIDForIdent("TESTString"), date("d.m.y - H:i:s", $LastUpdate));
+
             }
         }
 
