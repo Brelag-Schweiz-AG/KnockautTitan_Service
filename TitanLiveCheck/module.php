@@ -84,11 +84,16 @@
                 $VarInfo = IPS_GetVariable($VarIDString);
                 $TimeDiff = strtotime("now") - $VarInfo["VariableUpdated"];
                 $DiffToLastUpdate = $this->ReadPropertyInteger("LastUpdateDiff")*60;
-                $BetreffALERT = "ALERT: " . $this->ReadPropertyString("License");
+
 
                 if($TimeDiff > $DiffToLastUpdate)
                 {
-                  SMTP_SendMail($this->ReadPropertyInteger("LastUpdate"), $BetreffALERT, "IPS_GetName(IPS_GetParent($VarIDString)): IPS_GetName($VarIDString), $VarIDString; Letzter Update: $VarInfo["VariableUpdated"]");
+                  $BetreffALERT = "ALERT: " . $this->ReadPropertyString("License");
+                  $ParentID = IPS_GetParent($VarIDString);
+                  $ParentName = IPS_GetName($ParentID);
+                  $VariableName = IPS_GetName($VarIDString);
+
+                  SMTP_SendMail($this->ReadPropertyInteger("LastUpdate"), $BetreffALERT, "$ParentName: $VariableName, $VarIDString; Letzter Update: $VarInfo["VariableUpdated"]");
                 }
                 SetValue($this->GetIDForIdent("TESTString"), date("d.m.y - H:i:s", $LastUpdate));
             }
