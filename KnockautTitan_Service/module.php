@@ -21,8 +21,8 @@
             $this->RegisterPropertyInteger("LastUpdate", 0);          // Eigenschat um SMTP Instanz (Aktuallisierungs Check) auszuwählen
             $this->RegisterPropertyString("License", "");             // String eingage für die jeweilige Lizenz
             $this->RegisterPropertyInteger("IntLiveCheck", 1440);     // Eigenschaft für Eingabe der Intervallzeit für den Live Check (Standard 24h)
-            $this->RegisterPropertyInteger("IntUpdateCheck", 1440);   // Eigenschaft für Eingabe der Intervallzeit für den Aktuallisierungs Check (Standard 24h)
-            $this->RegisterPropertyInteger("LastUpdateDiff", 1380);   // Eigenschaft für Eingabe der der Differenz seit der letzten Aktuallisierung (Standard 23h)
+            $this->RegisterPropertyInteger("IntUpdateCheck", 240);   // Eigenschaft für Eingabe der Intervallzeit für den Aktuallisierungs Check (Standard 24h)
+            $this->RegisterPropertyInteger("LastUpdateDiff", 720);   // Eigenschaft für Eingabe der der Differenz seit der letzten Aktuallisierung (Standard 23h)
             $this->RegisterPropertyString("Supplement", "[]");        // Liste zum Einfügen der zu überprüfenden Variablen
 
             // Zyklisches auslösen
